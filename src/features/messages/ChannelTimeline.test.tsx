@@ -208,7 +208,10 @@ function setup({
       }
     },
   );
-  const list = { style: { height: "3706px", pointerEvents: "" } };
+  const list = {
+    style: { height: "3706px", pointerEvents: "" },
+    children: [],
+  };
   const styleChanged = () => {
     for (const [callback, targets] of mutations) {
       const options = targets.get(list);

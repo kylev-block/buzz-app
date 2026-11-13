@@ -19,6 +19,7 @@ import {
   useStableRowActivity,
 } from "./activity-presentation";
 import { DayDivider } from "./MessageTimestamp";
+import { useEmptyDays } from "./empty-days";
 import type { ConversationExtensions } from "../conversation/contracts";
 import type { RelaySession } from "../relay/session";
 import type { MessageAttention } from "../relay/unread";
@@ -918,6 +919,7 @@ function Timeline({
   const width = size.width;
   const latest = useRef({ signature, width, edgeHeight: size.edgeHeight });
   latest.current = { signature, width, edgeHeight: size.edgeHeight };
+  useEmptyDays(scroller, width > 0);
   const initialCache = useRef<VirtualizerHandle["cache"] | undefined>(
     undefined,
   );

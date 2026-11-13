@@ -130,6 +130,10 @@
 :where(html[data-message-density="compact"]) .day {
   margin-block: var(--space-3);
 }
+/* Nothing shows under it before the next day (empty-days.ts). */
+.day[data-empty-day] {
+  display: none;
+}
 .day::before,
 .day::after {
   content: "";
